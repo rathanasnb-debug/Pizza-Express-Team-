@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Express - Crafted with passion. Baked to perfection.</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandOrange: '#E27D24',
+                        brandWhite: '#FFFFFF',
+                        brandBlack: '#1A1A1A',
+                        brandGray: '#242424',
+                        brandLightGray: '#F9F9F9'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1A1A1A;
+            color: #FFFFFF;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A1A1A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E27D24;
+            border-radius: 4px;
+        }
+        /* Hide default scrollbar on body when mobile nav open */
+        .no-scroll {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- HEADER / NAVIGATION -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 bg-brandBlack/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Brand Logo (Recreated precisely as SVG from user upload) -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <svg class="w-12 h-12 transition-transform duration-300 group-hover:rotate-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="48" fill="#2E2B2A" stroke="#FFFFFF" stroke-width="3"/>
+                        <circle cx="50" cy="50" r="44" stroke="#FFFFFF" stroke-dasharray="1 1" stroke-width="0.5"/>
+                        <!-- Pizza Slice graphic from user photo -->
+                        <path d="M52 28C43.5 31.5 38.5 39.5 37 42C36.8 42.5 37.2 43 37.8 43.1L58.5 48.5C59 48.6 59.5 48.2 59.4 47.7C57.5 40 56 31.5 52 28ZM50.5 31.5C52.5 34 53.5 38.5 54.5 43C49 41 45.5 37 42 35.5C44.5 33.5 48 32 50.5 31.5Z" fill="#E27D24"/>
+                        <circle cx="45" cy="40" r="1.8" fill="#E27D24"/>
+                        <circle cx="48" cy="43" r="1.8" fill="#E27D24"/>
+                        <circle cx="51" cy="41" r="1.8" fill="#E27D24"/>
+                        <path d="M54.5 29.5C48 32.5 43.5 39 42 41.5" stroke="#E27D24" stroke-width="1.5" stroke-linecap="round"/>
+                        <!-- Text elements recreated from user logo -->
+                        <text x="50" y="61" fill="#E27D24" font-family="'Inter', sans-serif" font-weight="900" font-size="11.5" text-anchor="middle" letter-spacing="0.5">PIZZA</text>
+                        <text x="50" y="73" fill="#E27D24" font-family="'Inter', sans-serif" font-weight="900" font-size="11.5" text-anchor="middle" letter-spacing="0.5">EXPRESS</text>
+                        <text x="50" y="85" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="600" font-size="6.5" text-anchor="middle" letter-spacing="0.8">SINCE 2024</text>
+                    </svg>
+                    <div class="hidden sm:block">
+                        <span class="block text-xl font-extrabold tracking-wider text-white group-hover:text-brandOrange transition-colors">PIZZA <span class="text-brandOrange">EXPRESS</span></span>
+                        <span class="block text-[10px] tracking-[0.2em] uppercase text-gray-400 font-semibold">Crafted with passion</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Items -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-semibold text-white hover:text-brandOrange transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brandOrange hover:after:w-full after:transition-all">Home</a>
+                    <a href="#about" class="text-sm font-semibold text-white hover:text-brandOrange transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brandOrange hover:after:w-full after:transition-all">About</a>
+                    <a href="#products" class="text-sm font-semibold text-white hover:text-brandOrange transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brandOrange hover:after:w-full after:transition-all">Products</a>
+                    <a href="#promo" class="text-sm font-semibold text-white hover:text-brandOrange transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brandOrange hover:after:w-full after:transition-all">Promo</a>
+                    <a href="#team" class="text-sm font-semibold text-white hover:text-brandOrange transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brandOrange hover:after:w-full after:transition-all">Our Team</a>
+                    <a href="#contact" class="text-sm font-semibold text-white hover:text-brandOrange transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brandOrange hover:after:w-full after:transition-all">Contact</a>
+                </nav>
+
+                <!-- Navigation Action Buttons -->
+                <div class="flex items-center gap-4">
+                    <!-- Shopping Cart Trigger Button -->
+                    <button onclick="toggleCartDrawer()" class="relative p-2 bg-brandGray hover:bg-brandOrange/20 text-white rounded-full transition-all border border-white/10 group">
+                        <i data-lucide="shopping-cart" class="w-5 h-5 group-hover:text-brandOrange transition-colors"></i>
+                        <span id="cart-count-badge" class="absolute -top-1 -right-1 bg-brandOrange text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-brandBlack hidden">0</span>
+                    </button>
+                    <!-- CTA Button -->
+                    <a href="#products" class="hidden lg:inline-flex items-center gap-2 bg-brandOrange hover:bg-brandOrange/90 text-white px-5 py-2.5 rounded-full font-bold text-sm tracking-wide transition-all hover:shadow-[0_4px_20px_rgba(226,125,36,0.4)]">
+                        Order Online
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                    <!-- Mobile Hamburger Menu Button -->
+                    <button onclick="toggleMobileMenu()" class="p-2 text-white hover:text-brandOrange transition-colors md:hidden focus:outline-none">
+                        <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="fixed inset-0 top-[81px] bg-brandBlack/95 backdrop-blur-lg z-40 hidden flex-col px-6 py-8 gap-6 border-t border-white/10 transform translate-x-full transition-transform duration-350 ease-out md:hidden">
+            <a href="#home" onclick="toggleMobileMenu()" class="text-xl font-bold border-b border-white/5 pb-3 hover:text-brandOrange flex items-center justify-between">Home <i data-lucide="arrow-right" class="w-5 h-5 text-brandOrange"></i></a>
+            <a href="#about" onclick="toggleMobileMenu()" class="text-xl font-bold border-b border-white/5 pb-3 hover:text-brandOrange flex items-center justify-between">About Us <i data-lucide="arrow-right" class="w-5 h-5 text-brandOrange"></i></a>
+            <a href="#products" onclick="toggleMobileMenu()" class="text-xl font-bold border-b border-white/5 pb-3 hover:text-brandOrange flex items-center justify-between">Products <i data-lucide="arrow-right" class="w-5 h-5 text-brandOrange"></i></a>
+            <a href="#promo" onclick="toggleMobileMenu()" class="text-xl font-bold border-b border-white/5 pb-3 hover:text-brandOrange flex items-center justify-between">Promo Deals <i data-lucide="arrow-right" class="w-5 h-5 text-brandOrange"></i></a>
+            <a href="#team" onclick="toggleMobileMenu()" class="text-xl font-bold border-b border-white/5 pb-3 hover:text-brandOrange flex items-center justify-between">Management Team <i data-lucide="arrow-right" class="w-5 h-5 text-brandOrange"></i></a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="text-xl font-bold border-b border-white/5 pb-3 hover:text-brandOrange flex items-center justify-between">Contact <i data-lucide="arrow-right" class="w-5 h-5 text-brandOrange"></i></a>
+            <a href="#products" onclick="toggleMobileMenu()" class="mt-4 text-center bg-brandOrange hover:bg-brandOrange/90 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg">
+                Order Delivery Now
+            </a>
+        </div>
+    </header>
+
+    <!-- SHOPPING CART SLIDE-OVER DRAWER -->
+    <div id="cart-drawer-overlay" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+    <aside id="cart-drawer" class="fixed right-0 top-0 h-full w-full max-w-md bg-brandBlack border-l border-white/10 shadow-2xl z-50 transform translate-x-full transition-transform duration-350 ease-out flex flex-col">
+        <!-- Drawer Header -->
+        <div class="p-6 border-b border-white/10 flex items-center justify-between">
+            <h3 class="text-xl font-extrabold tracking-wide text-white flex items-center gap-2">
+                <i data-lucide="shopping-basket" class="text-brandOrange"></i> Your Order Cart
+            </h3>
+            <button onclick="toggleCartDrawer()" class="p-2 text-gray-400 hover:text-white transition-colors hover:bg-white/5 rounded-full">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Drawer Body (Cart Items) -->
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Empty State placeholder -->
+            <div id="empty-cart-state" class="h-full flex flex-col items-center justify-center text-center text-gray-400 py-12">
+                <div class="w-20 h-20 bg-brandGray rounded-full flex items-center justify-center mb-4 border border-white/5">
+                    <i data-lucide="pizza" class="w-10 h-10 text-gray-500"></i>
+                </div>
+                <h4 class="text-white font-bold text-lg mb-1">Your cart is empty!</h4>
+                <p class="text-sm max-w-[240px] mb-6">Choose from our gourmet signature Italian pizzas to get started.</p>
+                <a href="#products" onclick="toggleCartDrawer()" class="bg-brandOrange text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-brandOrange/90 transition-all">Explore Menu</a>
+            </div>
+        </div>
+
+        <!-- Drawer Footer (Pricing & Checkouts) -->
+        <div class="p-6 border-t border-white/10 bg-brandGray/40 space-y-4">
+            <div class="flex items-center justify-between text-sm text-gray-400">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal" class="font-semibold text-white">$0.00</span>
+            </div>
+            <div class="flex items-center justify-between text-sm text-gray-400">
+                <span>Delivery:</span>
+                <span class="text-green-400 font-semibold">FREE</span>
+            </div>
+            <div class="h-px bg-white/10"></div>
+            <div class="flex items-center justify-between text-base font-bold text-white">
+                <span>Estimated Total:</span>
+                <span id="cart-total" class="text-brandOrange text-xl">$0.00</span>
+            </div>
+            <button onclick="triggerCheckout()" id="checkout-btn" class="w-full bg-brandOrange hover:bg-brandOrange/90 text-white font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 tracking-wide disabled:opacity-40 disabled:cursor-not-allowed">
+                <span>Confirm Order</span>
+                <i data-lucide="check-circle2" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN SECTIONS -->
+    <main>
+        
+        <!-- HERO SECTION (HOME) -->
+        <section id="home" class="relative min-h-screen pt-28 flex items-center justify-center overflow-hidden bg-gradient-to-b from-brandBlack via-[#1F1D1B] to-brandBlack">
+            <!-- Decorative SVG Flourishes -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10%" cy="20%" r="150" fill="#E27D24" filter="blur(80px)" />
+                    <circle cx="85%" cy="75%" r="200" fill="#E27D24" filter="blur(100px)" />
+                </svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Hero Text Block -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-brandOrange/10 border border-brandOrange/30 px-4 py-1.5 rounded-full text-brandOrange text-xs sm:text-sm font-bold tracking-wider uppercase animate-pulse">
+                        <i data-lucide="flame" class="w-4 h-4"></i> Authentic Woodfired Sourdough
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white tracking-tight">
+                        Crafted with passion.<br>
+                        <span class="text-brandOrange bg-clip-text text-transparent bg-gradient-to-r from-brandOrange to-yellow-500">Baked to perfection.</span>
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-medium">
+                        Welcome to Pizza Express. We transform simple, fresh Italian ingredients into unforgettable culinary masterpieces. Experience real dough made from a 48-hour fermentation process.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#products" class="w-full sm:w-auto bg-brandOrange hover:bg-brandOrange/90 text-white font-extrabold px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2 shadow-lg shadow-brandOrange/30 hover:scale-[1.03]">
+                            <span>Order Now</span>
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#about" class="w-full sm:w-auto bg-brandGray hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-full transition-all border border-white/10 flex items-center justify-center gap-2 hover:border-brandOrange">
+                            <span>Explore Our Story</span>
+                            <i data-lucide="info" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/5 max-w-md mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-brandOrange">4.9★</span>
+                            <span class="block text-xs text-gray-400 font-medium">5K+ Customers</span>
+                        </div>
+                        <div class="text-center lg:text-left border-x border-white/10 px-2">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-brandOrange">20 Min</span>
+                            <span class="block text-xs text-gray-400 font-medium">Fast Express Delivery</span>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-brandOrange">100%</span>
+                            <span class="block text-xs text-gray-400 font-medium">Fresh Handmade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Pizza Slider Showcase -->
+                <div class="relative flex flex-col items-center justify-center">
+                    <div class="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] flex items-center justify-center bg-brandGray/40 border border-white/10 rounded-full p-4 shadow-[0_0_50px_rgba(226,125,36,0.15)] group">
+                        
+                        <!-- Rotating Ring background -->
+                        <div class="absolute inset-0 border-2 border-dashed border-brandOrange/30 rounded-full animate-[spin_100s_linear_infinite] pointer-events-none"></div>
+
+                        <!-- Active Pizza Image Canvas Container -->
+                        <div class="relative w-full h-full overflow-hidden rounded-full border-4 border-brandOrange/50">
+                            <img id="slider-image" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=600" alt="Fresh Gourmet Pizza" class="w-full h-full object-cover transition-transform duration-700 ease-out scale-100 rotate-0">
+                        </div>
+
+                        <!-- Floating Pizza Detail Tag -->
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-brandBlack/90 border border-white/20 backdrop-blur-md px-4 py-2.5 rounded-full flex items-center gap-3 shadow-2xl min-w-[200px] justify-between">
+                            <div>
+                                <span id="slider-title" class="block font-bold text-sm text-white leading-none">Pepperoni Passion</span>
+                                <span id="slider-price" class="text-brandOrange font-extrabold text-sm">$15.99</span>
+                            </div>
+                            <button id="slider-add-btn" class="bg-brandOrange hover:bg-white text-white hover:text-brandBlack p-1.5 rounded-full transition-all">
+                                <i data-lucide="plus" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slide Controls -->
+                    <div class="flex items-center gap-4 mt-6">
+                        <button onclick="prevSlide()" class="p-3 bg-brandGray hover:bg-brandOrange text-white rounded-full transition-all border border-white/5 hover:border-brandOrange hover:scale-105">
+                            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                        </button>
+                        <div class="flex gap-2" id="slider-dots">
+                            <!-- Populated Dynamically -->
+                        </div>
+                        <button onclick="nextSlide()" class="p-3 bg-brandGray hover:bg-brandOrange text-white rounded-full transition-all border border-white/5 hover:border-brandOrange hover:scale-105">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-24 bg-brandBlack relative border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Head -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brandOrange font-extrabold text-sm uppercase tracking-[0.2em] block mb-2">Our Culinary Roots</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white">Italian Art & Warm Hospitality</h2>
+                    <div class="w-24 h-1 bg-brandOrange mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- About Left Content (Texts) -->
+                    <div class="space-y-8">
+                        <!-- Brief Story Block -->
+                        <div class="bg-brandGray/40 border border-white/10 p-6 sm:p-8 rounded-2xl relative overflow-hidden group hover:border-brandOrange/30 transition-all">
+                            <div class="absolute top-0 left-0 w-2 h-full bg-brandOrange"></div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 flex items-center gap-2">
+                                <i data-lucide="heart" class="text-brandOrange"></i> Our Story
+                            </h3>
+                            <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                                "Pizza Express is a small business that aims to help people who do not have time for cooking or for large parties or gatherings. By combining good ingredients and eating quality food services for customers, it brings new flavors to enjoy together."
+                            </p>
+                        </div>
+
+                        <!-- Vision & Mission Side-by-Side -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Mission -->
+                            <div class="bg-brandGray/40 border border-white/5 p-6 rounded-2xl hover:border-white/15 transition-all">
+                                <div class="w-12 h-12 bg-brandOrange/10 border border-brandOrange/30 rounded-xl flex items-center justify-center mb-4">
+                                    <i data-lucide="target" class="text-brandOrange"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-white mb-2">Our Mission</h4>
+                                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                                    “Our mission is to become creating customer pleasure through authentic handmade pizzas, fresh ingredients, high quality, and friendly service in a stylish atmosphere.”
+                                </p>
+                            </div>
+
+                            <!-- Vision -->
+                            <div class="bg-brandGray/40 border border-white/5 p-6 rounded-2xl hover:border-white/15 transition-all">
+                                <div class="w-12 h-12 bg-brandOrange/10 border border-brandOrange/30 rounded-xl flex items-center justify-center mb-4">
+                                    <i data-lucide="eye" class="text-brandOrange"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-white mb-2">Our Vision</h4>
+                                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                                    “To become the most beloved and trusted high-end food store brand in the world by preserving the works of Italian food art and warm hospitality, prompt service to everyone.”
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Right Showcase (Image Grid) -->
+                    <div class="grid grid-cols-2 gap-4 relative">
+                        <div class="space-y-4">
+                            <div class="rounded-2xl overflow-hidden shadow-2xl h-48 sm:h-64 relative group">
+                                <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e01a?auto=format&fit=crop&q=80&w=400" alt="Pizza Chef stretching dough" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                            </div>
+                            <div class="rounded-2xl overflow-hidden shadow-2xl h-36 sm:h-48 relative group">
+                                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=400" alt="Freshly Prepared Ingredients" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="rounded-2xl overflow-hidden shadow-2xl h-36 sm:h-48 relative group">
+                                <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&q=80&w=400" alt="Elegant Dining Setup" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                            </div>
+                            <div class="rounded-2xl overflow-hidden shadow-2xl h-48 sm:h-64 relative group">
+                                <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&q=80&w=400" alt="Hot woodfired pizza oven" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section id="products" class="py-24 bg-brandBlack/95 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Head -->
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-16 border-b border-white/5 pb-8">
+                    <div class="text-center md:text-left">
+                        <span class="text-brandOrange font-extrabold text-sm uppercase tracking-[0.2em] block mb-2">Our Menu Specialties</span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-white">Choose Your Fresh Pizza</h2>
+                        <div class="w-24 h-1 bg-brandOrange mt-4 rounded-full md:mx-0 mx-auto"></div>
+                    </div>
+                    <!-- Menu Category Filter Buttons -->
+                    <div class="flex flex-wrap items-center justify-center gap-2 bg-brandGray p-1.5 rounded-full border border-white/5">
+                        <button onclick="filterProducts('all')" class="category-btn active px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all bg-brandOrange text-white">All Flavors</button>
+                        <button onclick="filterProducts('meat')" class="category-btn px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm tracking-wide text-gray-400 hover:text-white transition-all">Meat</button>
+                        <button onclick="filterProducts('veggie')" class="category-btn px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm tracking-wide text-gray-400 hover:text-white transition-all">Veggie</button>
+                        <button onclick="filterProducts('seafood')" class="category-btn px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm tracking-wide text-gray-400 hover:text-white transition-all">Seafood</button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Standard Menu Card Template populated by JS for instant dynamic cart bindings -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PROMO SECTION -->
+        <section id="promo" class="py-24 bg-gradient-to-b from-brandBlack to-[#181615] relative border-t border-white/5 overflow-hidden">
+            <!-- Background accents -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brandOrange/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Section Head -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brandOrange font-extrabold text-sm uppercase tracking-[0.2em] block mb-2">Limited-Time Special Offers</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white">Tasty Express Deals & Promos</h2>
+                    <div class="w-24 h-1 bg-brandOrange mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Promo Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Promo Card 1 -->
+                    <div class="bg-brandGray/40 border border-white/10 rounded-3xl p-8 relative flex flex-col justify-between group hover:border-brandOrange transition-all overflow-hidden">
+                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-brandOrange/10 rounded-full flex items-center justify-center group-hover:scale-125 transition-transform">
+                            <i data-lucide="tag" class="text-brandOrange w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <div class="inline-block bg-brandOrange text-white text-xs font-black uppercase px-3 py-1 rounded-full tracking-wider mb-6">BUY 1 GET 1</div>
+                            <h3 class="text-2xl font-black text-white mb-2">Double Slice Feast</h3>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">Order any large gourmet pizza on Wednesday or Thursday and receive a classic Margherita absolutely free!</p>
+                        </div>
+                        <div>
+                            <div class="text-xs text-brandOrange font-bold tracking-widest uppercase mb-2">Limited Time Offer</div>
+                            <button onclick="addToCart(1)" class="w-full bg-brandOrange group-hover:bg-brandOrange/90 text-white font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="shopping-cart" class="w-4 h-4"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Promo Card 2: Highlighted Middle / Countdown -->
+                    <div class="bg-gradient-to-b from-brandOrange to-red-600 border-2 border-brandOrange/30 rounded-3xl p-8 relative flex flex-col justify-between shadow-[0_15px_40px_rgba(226,125,36,0.25)] scale-100 lg:scale-[1.03] overflow-hidden group">
+                        <div class="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full flex items-center justify-center">
+                            <i data-lucide="sparkles" class="text-white w-12 h-12 opacity-40"></i>
+                        </div>
+                        <div>
+                            <div class="inline-block bg-brandBlack text-brandOrange text-xs font-black uppercase px-3 py-1 rounded-full tracking-wider mb-6">HOT VALUE</div>
+                            <h3 class="text-3xl font-black text-white mb-2">Family Party Combo</h3>
+                            <p class="text-white/90 text-sm mb-6 leading-relaxed">Get any 2 Large Premium Pizzas, 1 Family Garlic Bread, and a 1.5L drink bottle. Feeds up to 4-5 hungry foodies.</p>
+                            
+                            <!-- Live Countdown Timer -->
+                            <div class="bg-brandBlack/80 border border-white/15 p-4 rounded-2xl mb-6">
+                                <span class="text-center text-xs text-gray-400 font-bold block mb-2 uppercase tracking-widest">Promotion Closes In</span>
+                                <div class="grid grid-cols-4 gap-2 text-center">
+                                    <div class="bg-brandGray/90 rounded-lg p-2 border border-white/5">
+                                        <span id="hours-timer" class="block text-lg font-black text-brandOrange">05</span>
+                                        <span class="text-[9px] text-gray-400 font-medium uppercase">Hrs</span>
+                                    </div>
+                                    <div class="bg-brandGray/90 rounded-lg p-2 border border-white/5">
+                                        <span id="minutes-timer" class="block text-lg font-black text-brandOrange">42</span>
+                                        <span class="text-[9px] text-gray-400 font-medium uppercase">Min</span>
+                                    </div>
+                                    <div class="bg-brandGray/90 rounded-lg p-2 border border-white/5">
+                                        <span id="seconds-timer" class="block text-lg font-black text-brandOrange">19</span>
+                                        <span class="text-[9px] text-gray-400 font-medium uppercase">Sec</span>
+                                    </div>
+                                    <div class="bg-brandGray/90 rounded-lg p-2 border border-white/5 flex flex-col justify-center items-center">
+                                        <span class="block text-xs font-black text-green-400">SAVE</span>
+                                        <span class="text-[9px] text-gray-400 font-medium uppercase">35%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="addPromoCombo()" class="w-full bg-brandBlack hover:bg-brandBlack/85 text-brandOrange hover:text-white font-extrabold py-3.5 px-6 rounded-xl transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i> Grab Combo for $29.99
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Promo Card 3 -->
+                    <div class="bg-brandGray/40 border border-white/10 rounded-3xl p-8 relative flex flex-col justify-between group hover:border-brandOrange transition-all overflow-hidden">
+                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-brandOrange/10 rounded-full flex items-center justify-center group-hover:scale-125 transition-transform">
+                            <i data-lucide="gift" class="text-brandOrange w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <div class="inline-block bg-brandOrange text-white text-xs font-black uppercase px-3 py-1 rounded-full tracking-wider mb-6">WEEKEND EXCLUSIVE</div>
+                            <h3 class="text-2xl font-black text-white mb-2">Sweet Sunday Treat</h3>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">Spend $35 or more on order totals and claim a Complimentary Warm Lava Fudge Cake as dessert!</p>
+                        </div>
+                        <div>
+                            <div class="text-xs text-brandOrange font-bold tracking-widest uppercase mb-2">Weekend Special</div>
+                            <button onclick="addToCart(3)" class="w-full bg-brandOrange group-hover:bg-brandOrange/90 text-white font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="shopping-cart" class="w-4 h-4"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MANAGEMENT TEAM SECTION -->
+        <section id="team" class="py-24 bg-brandBlack relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Head -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brandOrange font-extrabold text-sm uppercase tracking-[0.2em] block mb-2">Our Executive Leadership</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white">The Pizza Express Management Team</h2>
+                    <p class="text-sm text-gray-400 mt-2">The skilled and passionate professionals guiding our standard of hospitality excellence.</p>
+                    <div class="w-24 h-1 bg-brandOrange mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Team Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Manager 1 -->
+                    <div class="bg-brandGray/40 border border-white/5 hover:border-brandOrange/40 rounded-3xl p-6 text-center shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                        <!-- Headshot Placeholder Frame -->
+                        <div class="relative w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/5 group-hover:border-brandOrange transition-all bg-gradient-to-b from-brandOrange/20 to-brandGray">
+                            <!-- Icon Representing Professional Avatar -->
+                            <div class="absolute inset-0 flex items-center justify-center text-white/20 group-hover:text-brandOrange/40 transition-colors">
+                                <i data-lucide="user-round" class="w-20 h-20"></i>
+                            </div>
+                            <img src="./picture-/MrRathana.jpg" alt="Phann Sovanrathana" class="w-full h-full object-cover relative z-10 opacity-90 group-hover:scale-105 transition-all">
+                        </div>
+                        <h3 class="text-lg font-black text-white group-hover:text-brandOrange transition-all">Phann Sovanrathana</h3>
+                        <span class="text-xs text-brandOrange font-bold uppercase tracking-widest block mt-1">General Manager & Owner</span>
+                        <p class="text-xs text-gray-400 mt-4 leading-relaxed">Directs brand strategy, hospitality standards, and shapes our long-term vision of global Italian art preservation.</p>
+                        <!-- Socials -->
+                        <div class="flex items-center justify-center gap-3 mt-6">
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Manager 2 -->
+                    <div class="bg-brandGray/40 border border-white/5 hover:border-brandOrange/40 rounded-3xl p-6 text-center shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                        <div class="relative w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/5 group-hover:border-brandOrange transition-all bg-gradient-to-b from-brandOrange/20 to-brandGray">
+                            <div class="absolute inset-0 flex items-center justify-center text-white/20 group-hover:text-brandOrange/40 transition-colors">
+                                <i data-lucide="user-round" class="w-20 h-20"></i>
+                            </div>
+                            <img src="./picture-/Vong Lyheng.jpg" alt="Vong Lyheng" class="w-full h-full object-cover relative z-10 opacity-90 group-hover:scale-105 transition-all">
+                        </div>
+                        <h3 class="text-lg font-black text-white group-hover:text-brandOrange transition-all">Vong Lyheng</h3>
+                        <span class="text-xs text-brandOrange font-bold uppercase tracking-widest block mt-1">Co-Founder & Culinary Director</span>
+                        <p class="text-xs text-gray-400 mt-4 leading-relaxed">Oversees our kitchen processes, dough formulation, standard of visual presentation, and direct sourcing of Italian items.</p>
+                        <div class="flex items-center justify-center gap-3 mt-6">
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Manager 3 -->
+                    <div class="bg-brandGray/40 border border-white/5 hover:border-brandOrange/40 rounded-3xl p-6 text-center shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                        <div class="relative w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/5 group-hover:border-brandOrange transition-all bg-gradient-to-b from-brandOrange/20 to-brandGray">
+                            <div class="absolute inset-0 flex items-center justify-center text-white/20 group-hover:text-brandOrange/40 transition-colors">
+                                <i data-lucide="user-round" class="w-20 h-20"></i>
+                            </div>
+                            <img src="./picture-/LOEURT Kanhchana.jpg" alt="LOEURT Kanhchana" class="w-full h-full object-cover relative z-10 opacity-90 group-hover:scale-105 transition-all">
+                        </div>
+                        <h3 class="text-lg font-black text-white group-hover:text-brandOrange transition-all">LOEURT Kanhchana</h3>
+                        <span class="text-xs text-brandOrange font-bold uppercase tracking-widest block mt-1">Head of Operations & Logistics</span>
+                        <p class="text-xs text-gray-400 mt-4 leading-relaxed">Guarantees that express pizza delivery times remain unmatched, monitoring customer experiences and driver dispatching daily.</p>
+                        <div class="flex items-center justify-center gap-3 mt-6">
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Manager 4 -->
+                    <div class="bg-brandGray/40 border border-white/5 hover:border-brandOrange/40 rounded-3xl p-6 text-center shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                        <div class="relative w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/5 group-hover:border-brandOrange transition-all bg-gradient-to-b from-brandOrange/20 to-brandGray">
+                            <div class="absolute inset-0 flex items-center justify-center text-white/20 group-hover:text-brandOrange/40 transition-colors">
+                                <i data-lucide="user-round" class="w-20 h-20"></i>
+                            </div>
+                            <img src="./picture-/Sreypov.jpg" alt="Chorn Serypov" class="w-full h-full object-cover relative z-10 opacity-90 group-hover:scale-105 transition-all">
+                        </div>
+                        <h3 class="text-lg font-black text-white group-hover:text-brandOrange transition-all">Chorn Serypov</h3>
+                        <span class="text-xs text-brandOrange font-bold uppercase tracking-widest block mt-1">Marketing & Guest Relations</span>
+                        <p class="text-xs text-gray-400 mt-4 leading-relaxed">Directs the friendly community programs, social media feedback loops, customer loyalty programs and special promotions.</p>
+                        <div class="flex items-center justify-center gap-3 mt-6">
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                            <a href="#" class="p-2 bg-brandBlack hover:bg-brandOrange text-gray-400 hover:text-white rounded-full transition-all border border-white/5"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-24 bg-brandBlack/95 relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Head -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brandOrange font-extrabold text-sm uppercase tracking-[0.2em] block mb-2">Connect With Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white">We'd Love to Hear From You</h2>
+                    <div class="w-24 h-1 bg-brandOrange mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                    <!-- Contact Form Card -->
+                    <div class="bg-brandGray/40 border border-white/10 rounded-3xl p-8 shadow-xl flex flex-col justify-between">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i data-lucide="mail" class="text-brandOrange"></i> Send Us an Online Message
+                        </h3>
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">First Name</label>
+                                    <input type="text" required class="w-full bg-brandBlack border border-white/10 focus:border-brandOrange text-white text-sm px-4 py-3 rounded-xl outline-none transition-colors" placeholder="John">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Last Name</label>
+                                    <input type="text" required class="w-full bg-brandBlack border border-white/10 focus:border-brandOrange text-white text-sm px-4 py-3 rounded-xl outline-none transition-colors" placeholder="Doe">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Email Address</label>
+                                <input type="email" required class="w-full bg-brandBlack border border-white/10 focus:border-brandOrange text-white text-sm px-4 py-3 rounded-xl outline-none transition-colors" placeholder="johndoe@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Subject</label>
+                                <select class="w-full bg-brandBlack border border-white/10 focus:border-brandOrange text-white text-sm px-4 py-3 rounded-xl outline-none transition-colors">
+                                    <option class="bg-brandBlack">Gourmet Catering / Party Inquiry</option>
+                                    <option class="bg-brandBlack">General Feedback / Review</option>
+                                    <option class="bg-brandBlack">Order Support</option>
+                                    <option class="bg-brandBlack">Career Opportunities</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Your Message</label>
+                                <textarea required rows="4" class="w-full bg-brandBlack border border-white/10 focus:border-brandOrange text-white text-sm px-4 py-3 rounded-xl outline-none transition-colors resize-none" placeholder="How can we help make your pizza party unforgettable?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-brandOrange hover:bg-brandOrange/90 text-white font-extrabold py-3.5 px-6 rounded-xl transition-all shadow-lg shadow-brandOrange/20 flex items-center justify-center gap-2">
+                                <span>Send Message</span>
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Details / Map -->
+                    <div class="flex flex-col justify-between gap-8">
+                        <!-- Info Card -->
+                        <div class="bg-brandGray/40 border border-white/10 rounded-3xl p-8 shadow-xl space-y-6">
+                            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                                <i data-lucide="compass" class="text-brandOrange"></i> Store Headquarters
+                            </h3>
+
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-3 bg-brandOrange/10 border border-brandOrange/20 rounded-xl text-brandOrange mt-0.5">
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-xs text-gray-400 font-bold uppercase tracking-wider">Our Address</span>
+                                        <span class="block text-sm sm:text-base text-white font-semibold mt-1">122 Italian Gourmet Blvd, Suite 400<br>Phnom Penh, Cambodia</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="p-3 bg-brandOrange/10 border border-brandOrange/20 rounded-xl text-brandOrange mt-0.5">
+                                        <i data-lucide="phone" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-xs text-gray-400 font-bold uppercase tracking-wider">Phone Lines</span>
+                                        <span class="block text-sm sm:text-base text-white font-semibold mt-1">+855 (0) 23 888 999</span>
+                                        <span class="block text-xs text-gray-450 mt-0.5">Available for Express Order Call Outs</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="p-3 bg-brandOrange/10 border border-brandOrange/20 rounded-xl text-brandOrange mt-0.5">
+                                        <i data-lucide="clock" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-xs text-gray-400 font-bold uppercase tracking-wider">Baking Hours</span>
+                                        <span class="block text-sm sm:text-base text-white font-semibold mt-1">Mon - Sun: 10:00 AM - 11:00 PM</span>
+                                        <span class="text-xs text-green-400 font-bold flex items-center gap-1 mt-1">
+                                            <span class="inline-block w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span> Open on Holidays
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Styled Premium Google Map Embed Mock with custom fallback styling -->
+                        <div class="bg-brandGray/40 border border-white/10 rounded-3xl overflow-hidden flex-1 min-h-[240px] relative group shadow-xl">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15635.038475877884!2d104.91238478491823!3d11.56411933092524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513dc76a6be3%3A0x9c0e0e62d48c14a2!2sPhnom%20Penh!5e0!3m2!1sen!2skh!4v1716280000000!5m2!1sen!2skh" 
+                                class="w-full h-full border-0 absolute inset-0 opacity-80 group-hover:opacity-100 transition-opacity grayscale contrast-[1.1] invert-[0.9]" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                            <div class="absolute bottom-4 left-4 bg-brandBlack/95 border border-white/20 p-3 rounded-xl max-w-xs backdrop-blur-md">
+                                <span class="block text-[10px] text-brandOrange font-bold uppercase tracking-wider mb-0.5">Live Delivery Radar</span>
+                                <span class="text-xs text-white leading-tight">Fastest 20-minute average hot box transport limit in city areas!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandBlack border-t border-white/10 pt-16 pb-8 text-gray-400 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-white/5">
+                
+                <!-- Col 1: About & Slogan -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="48" fill="#2E2B2A" stroke="#FFFFFF" stroke-width="3"/>
+                            <circle cx="50" cy="50" r="44" stroke="#FFFFFF" stroke-dasharray="1 1" stroke-width="0.5"/>
+                            <path d="M52 28C43.5 31.5 38.5 39.5 37 42C36.8 42.5 37.2 43 37.8 43.1L58.5 48.5C59 48.6 59.5 48.2 59.4 47.7C57.5 40 56 31.5 52 28ZM50.5 31.5C52.5 34 53.5 38.5 54.5 43C49 41 45.5 37 42 35.5C44.5 33.5 48 32 50.5 31.5Z" fill="#E27D24"/>
+                            <circle cx="45" cy="40" r="1.8" fill="#E27D24"/>
+                            <circle cx="48" cy="43" r="1.8" fill="#E27D24"/>
+                            <circle cx="51" cy="41" r="1.8" fill="#E27D24"/>
+                            <path d="M54.5 29.5C48 32.5 43.5 39 42 41.5" stroke="#E27D24" stroke-width="1.5" stroke-linecap="round"/>
+                            <text x="50" y="61" fill="#E27D24" font-family="'Inter', sans-serif" font-weight="900" font-size="11.5" text-anchor="middle" letter-spacing="0.5">PIZZA</text>
+                            <text x="50" y="73" fill="#E27D24" font-family="'Inter', sans-serif" font-weight="900" font-size="11.5" text-anchor="middle" letter-spacing="0.5">EXPRESS</text>
+                            <text x="50" y="85" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="600" font-size="6.5" text-anchor="middle" letter-spacing="0.8">SINCE 2024</text>
+                        </svg>
+                        <span class="text-xl font-extrabold text-white tracking-wider">PIZZA <span class="text-brandOrange">EXPRESS</span></span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-400">
+                        "Crafted with passion. Baked to perfection"<br>Bringing real gourmet wood-fired flavor right to your doorstep.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#" class="p-2 bg-brandGray hover:bg-brandOrange hover:text-white rounded-full transition-colors text-gray-400 border border-white/5"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" class="p-2 bg-brandGray hover:bg-brandOrange hover:text-white rounded-full transition-colors text-gray-400 border border-white/5"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="p-2 bg-brandGray hover:bg-brandOrange hover:text-white rounded-full transition-colors text-gray-400 border border-white/5"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="#" class="p-2 bg-brandGray hover:bg-brandOrange hover:text-white rounded-full transition-colors text-gray-400 border border-white/5"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-extrabold text-sm uppercase tracking-widest mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#home" class="hover:text-brandOrange transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brandOrange"></i> Home Carousel</a></li>
+                        <li><a href="#about" class="hover:text-brandOrange transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brandOrange"></i> Our Mission & Story</a></li>
+                        <li><a href="#products" class="hover:text-brandOrange transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brandOrange"></i> Sourdough Menu</a></li>
+                        <li><a href="#promo" class="hover:text-brandOrange transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brandOrange"></i> Hot Combo Specials</a></li>
+                        <li><a href="#team" class="hover:text-brandOrange transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brandOrange"></i> Professional Staff</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Baking Hours -->
+                <div>
+                    <h4 class="text-white font-extrabold text-sm uppercase tracking-widest mb-4">Hot Kitchen Hours</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="text-gray-300 font-semibold">Monday - Friday</span> <span>10am - 11pm</span></li>
+                        <li class="flex items-center justify-between"><span class="text-gray-300 font-semibold">Saturday - Sunday</span> <span>10am - Midnight</span></li>
+                        <li class="flex items-center justify-between"><span class="text-gray-300 font-semibold">Holiday Catering</span> <span>Flexible Time</span></li>
+                        <li class="h-px bg-white/5 my-2"></li>
+                        <li class="text-xs text-brandOrange font-medium flex items-center gap-1.5"><i data-lucide="truck" class="w-4 h-4"></i> Express Hot Transport is active now.</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter Subscription -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-extrabold text-sm uppercase tracking-widest mb-4">Join Free Slice Club</h4>
+                    <p class="text-xs text-gray-400">Subscribe for special holiday discount tokens and secret woodfired menu updates!</p>
+                    <form onsubmit="handleNewsletterSubmit(event)" class="relative">
+                        <input type="email" required placeholder="name@example.com" class="w-full bg-brandGray border border-white/10 focus:border-brandOrange text-white text-xs px-4 py-3.5 rounded-xl outline-none transition-all pr-12">
+                        <button type="submit" class="absolute right-2 top-1.5 bottom-1.5 bg-brandOrange hover:bg-brandOrange/90 text-white px-3.5 rounded-lg transition-all flex items-center justify-center">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Block -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 Pizza Express. All rights reserved. Original brand founded in 2024.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-brandOrange transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-brandOrange transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-brandOrange transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE NOTIFICATION TOAST WRAPPER -->
+    <div id="toast-container" class="fixed bottom-6 left-6 z-50 flex flex-col gap-3 pointer-events-none max-w-md w-full"></div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 bg-brandOrange hover:bg-brandOrange/80 text-white p-3.5 rounded-full transition-all border border-brandOrange/30 shadow-[0_4px_20px_rgba(226,125,36,0.3)] opacity-0 pointer-events-none translate-y-4">
+        <i data-lucide="chevrons-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- CORE INTERACTION JAVASCRIPT -->
+    <script>
+        // Static Pizza Dataset with imagery, categories, ingredients & prices
+        const PIZZA_DATA = [
+            {
+                id: 1,
+                name: "Pepperoni Passion",
+                category: "meat",
+                price: 15.99,
+                description: "Zesty Italian Pepperoni",
+                ingredients: "Rich traditional tomato reduction base, premium melted mozzarella, heaps of zesty double-spiced beef pepperoni, and fresh wild oregano sprinkles.",
+                image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&q=80&w=400",
+                badge: "Top Seller",
+                badgeColor: "bg-red-500"
+            },
+            {
+                id: 2,
+                name: "Classic Margherita",
+                category: "veggie",
+                price: 12.99,
+                description: "Simple Italian Craft Art",
+                ingredients: "Classic Neapolitan San Marzano tomatoes, premium fresh hand-stretched mozzarella, virgin olive oil drizzle, and aromatic torn sweet basil leaves.",
+                image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&q=80&w=400",
+                badge: "Authentic",
+                badgeColor: "bg-green-500"
+            },
+            {
+                id: 3,
+                name: "Hawaiian Sunset",
+                category: "meat",
+                price: 14.99,
+                description: "Delightful Sweet-Salty Mix",
+                ingredients: "Sweet pineapple wedges, honey-cured smoked ham strips, traditional pizza cheese, wood-fired crispy sourdough edge, and light chili honey wash.",
+                image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=400",
+                badge: "Favorite",
+                badgeColor: "bg-orange-500"
+            },
+            {
+                id: 4,
+                name: "Seafood Deluxe",
+                category: "seafood",
+                price: 18.99,
+                description: "Rich Ocean Harvest Blend",
+                ingredients: "Smoked salmon medallions, tender butter-garlic prawns, baby calamari, fresh dill cream cheese layers, and organic capers with a lemon twist.",
+                image: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&q=80&w=400",
+                badge: "Premium",
+                badgeColor: "bg-purple-500"
+            },
+            {
+                id: 5,
+                name: "BBQ Chicken Feast",
+                category: "meat",
+                price: 16.49,
+                description: "Smoky Hickory Style",
+                ingredients: "Tender grilled chicken thigh pieces, rich smoky sweet hickory barbecue base, caramelized red onions, fresh cilantro, and sharp smoked gouda cheese.",
+                image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=400",
+                badge: "Crowd Pleaser",
+                badgeColor: "bg-blue-500"
+            },
+            {
+                id: 6,
+                name: "Tuscan Garden",
+                category: "veggie",
+                price: 13.99,
+                description: "Loaded Vegetarian Garden",
+                ingredients: "Sun-dried tomatoes, roasted red bell peppers, baby spinach, artichoke hearts, black kalamata olives, crumbled feta cheese, and pesto drizzle.",
+                image: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&q=80&w=400",
+                badge: "Healthy Choice",
+                badgeColor: "bg-emerald-500"
+            }
+        ];
+
+        // Active State
+        let currentSlideIndex = 0;
+        let shoppingCart = [];
+
+        // ON LOAD INITIALIZER
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderSliderDots();
+            updateSliderInfo();
+            renderProducts('all');
+            initStickyNavbar();
+            startCountdownTimer();
+            initBackToTopButton();
+        });
+
+        // STICKY NAVBAR LOGIC
+        function initStickyNavbar() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    navbar.classList.add('bg-brandBlack/95', 'py-2.5', 'shadow-2xl');
+                    navbar.classList.remove('bg-brandBlack/90', 'py-4');
+                } else {
+                    navbar.classList.add('bg-brandBlack/90', 'py-4');
+                    navbar.classList.remove('bg-brandBlack/95', 'py-2.5', 'shadow-2xl');
+                }
+            });
+        }
+
+        // MOBILE DRAWER HAMBURGER TOGGLE
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const isHidden = mobileMenu.classList.contains('hidden');
+
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                document.body.classList.add('no-scroll');
+                setTimeout(() => {
+                    mobileMenu.classList.remove('translate-x-full');
+                }, 10);
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.classList.remove('no-scroll');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 350);
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // BACK TO TOP BEHAVIOR
+        function initBackToTopButton() {
+            const btn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    btn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                } else {
+                    btn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                }
+            });
+        }
+
+        // SLIDER MANAGEMENT
+        function renderSliderDots() {
+            const container = document.getElementById('slider-dots');
+            container.innerHTML = "";
+            PIZZA_DATA.slice(0, 4).forEach((_, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `w-3 h-3 rounded-full transition-all duration-300 ${idx === currentSlideIndex ? 'bg-brandOrange w-8' : 'bg-gray-500'}`;
+                btn.setAttribute('onclick', `gotoSlide(${idx})`);
+                container.appendChild(btn);
+            });
+        }
+
+        function updateSliderInfo() {
+            const pizza = PIZZA_DATA[currentSlideIndex];
+            const imgEl = document.getElementById('slider-image');
+            const titleEl = document.getElementById('slider-title');
+            const priceEl = document.getElementById('slider-price');
+            const addBtnEl = document.getElementById('slider-add-btn');
+
+            // Apply smooth transition slide out/in
+            imgEl.style.transform = "scale(0.9) rotate(-15deg)";
+            imgEl.style.opacity = "0.5";
+
+            setTimeout(() => {
+                imgEl.src = pizza.image;
+                titleEl.textContent = pizza.name;
+                priceEl.textContent = `$${pizza.price.toFixed(2)}`;
+                
+                // Set click action for slide order
+                addBtnEl.setAttribute('onclick', `addToCart(${pizza.id})`);
+
+                imgEl.style.transform = "scale(1) rotate(0deg)";
+                imgEl.style.opacity = "1";
+            }, 300);
+
+            // Update Dot styling
+            const dots = document.querySelectorAll('#slider-dots button');
+            dots.forEach((dot, idx) => {
+                if (idx === currentSlideIndex) {
+                    dot.classList.add('bg-brandOrange', 'w-8');
+                    dot.classList.remove('bg-gray-500');
+                } else {
+                    dot.classList.remove('bg-brandOrange', 'w-8');
+                    dot.classList.add('bg-gray-500');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % 4; // limit carousel to first 4 items
+            updateSliderInfo();
+        }
+
+        function prevSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + 4) % 4;
+            updateSliderInfo();
+        }
+
+        function gotoSlide(idx) {
+            currentSlideIndex = idx;
+            updateSliderInfo();
+        }
+
+        // PRODUCTS RENDER & FILTERING
+        function renderProducts(category) {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = "";
+
+            const filtered = category === 'all' 
+                ? PIZZA_DATA 
+                : PIZZA_DATA.filter(p => p.category === category);
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = "bg-brandGray/40 border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:shadow-brandOrange/5 transition-all duration-300 hover:border-brandOrange/30 group flex flex-col justify-between";
+                card.innerHTML = `
+                    <div>
+                        <!-- Product Banner Image -->
+                        <div class="relative h-56 w-full overflow-hidden">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 ${p.badgeColor} text-white font-black text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg">
+                                ${p.badge}
+                            </span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-brandBlack/90 via-transparent to-transparent"></div>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-extrabold text-white group-hover:text-brandOrange transition-colors">${p.name}</h3>
+                                <span class="text-brandOrange font-black text-xl">$${p.price.toFixed(2)}</span>
+                            </div>
+                            <span class="block text-xs text-gray-400 font-semibold italic">${p.description}</span>
+                            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed pt-2 border-t border-white/5">${p.ingredients}</p>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer Actions -->
+                    <div class="p-6 pt-0">
+                        <button onclick="addToCart(${p.id})" class="w-full bg-brandOrange hover:bg-brandOrange/90 text-white font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-brandOrange/15 active:scale-[0.98]">
+                            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        function filterProducts(category) {
+            // Update active state of category buttons
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brandOrange', 'text-white');
+                btn.classList.add('text-gray-400');
+            });
+
+            // Find current event source element and apply active styling
+            const target = event.currentTarget;
+            target.classList.add('bg-brandOrange', 'text-white');
+            target.classList.remove('text-gray-400');
+
+            renderProducts(category);
+        }
+
+        // SHOPPING CART DRAWER SYSTEM
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-drawer-overlay');
+            const isHidden = drawer.classList.contains('translate-x-full');
+
+            if (isHidden) {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('pointer-events-none', 'opacity-0');
+                overlay.classList.add('opacity-100');
+                document.body.classList.add('no-scroll');
+            } else {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('pointer-events-none', 'opacity-0');
+                overlay.classList.remove('opacity-100');
+                document.body.classList.remove('no-scroll');
+            }
+        }
+
+        // Add regular menu item to shopping cart
+        function addToCart(pizzaId) {
+            const item = PIZZA_DATA.find(p => p.id === pizzaId);
+            if (!item) return;
+
+            const existingItemIndex = shoppingCart.findIndex(cartItem => cartItem.id === pizzaId);
+
+            if (existingItemIndex > -1) {
+                shoppingCart[existingItemIndex].quantity += 1;
+            } else {
+                shoppingCart.push({
+                    ...item,
+                    quantity: 1
+                });
+            }
+
+            renderCartItems();
+            updateCartSummary();
+            showNotification(`Added ${item.name} to order!`, "shopping-cart");
+        }
+
+        // Dynamic Add Promo Combo (Family Party Combo)
+        function addPromoCombo() {
+            const comboItem = {
+                id: 999, // special item ID
+                name: "Family Party Combo Deal",
+                price: 29.99,
+                description: "2x Large Pizzas + Garlic Bread + 1.5L Coke",
+                image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=400",
+                quantity: 1
+            };
+
+            const existing = shoppingCart.findIndex(c => c.id === 999);
+            if (existing > -1) {
+                shoppingCart[existing].quantity += 1;
+            } else {
+                shoppingCart.push(comboItem);
+            }
+
+            renderCartItems();
+            updateCartSummary();
+            showNotification("Added Family Combo to order!", "sparkles");
+            toggleCartDrawer();
+        }
+
+        // Adjust Cart quantities
+        function adjustQty(itemId, modifier) {
+            const index = shoppingCart.findIndex(c => c.id === itemId);
+            if (index === -1) return;
+
+            shoppingCart[index].quantity += modifier;
+
+            if (shoppingCart[index].quantity <= 0) {
+                shoppingCart.splice(index, 1);
+            }
+
+            renderCartItems();
+            updateCartSummary();
+        }
+
+        // Update total counters & badge indicators
+        function updateCartSummary() {
+            const badge = document.getElementById('cart-count-badge');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const totalEl = document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            let totalQty = 0;
+            let totalPrice = 0;
+
+            shoppingCart.forEach(item => {
+                totalQty += item.quantity;
+                totalPrice += (item.price * item.quantity);
+            });
+
+            // Update Badge
+            if (totalQty > 0) {
+                badge.textContent = totalQty;
+                badge.classList.remove('hidden');
+                checkoutBtn.removeAttribute('disabled');
+            } else {
+                badge.classList.add('hidden');
+                checkoutBtn.setAttribute('disabled', 'true');
+            }
+
+            subtotalEl.textContent = `$${totalPrice.toFixed(2)}`;
+            totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+        }
+
+        // Render Cart Items HTML
+        function renderCartItems() {
+            const container = document.getElementById('cart-items-container');
+            const emptyState = document.getElementById('empty-cart-state');
+
+            if (shoppingCart.length === 0) {
+                container.innerHTML = "";
+                container.appendChild(emptyState);
+                return;
+            }
+
+            // Clear previous items but keep emptyState placeholder separate
+            container.innerHTML = "";
+
+            shoppingCart.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = "flex items-center gap-4 bg-brandGray p-3.5 rounded-2xl border border-white/5 relative group";
+                itemEl.innerHTML = `
+                    <div class="w-16 h-16 rounded-xl overflow-hidden border border-white/10 flex-shrink-0">
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="block text-white font-extrabold text-sm truncate">${item.name}</span>
+                        <span class="block text-brandOrange text-xs font-bold mt-0.5">$${item.price.toFixed(2)} each</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-brandBlack px-2 py-1.5 rounded-lg border border-white/5">
+                        <button onclick="adjustQty(${item.id}, -1)" class="text-gray-400 hover:text-brandOrange transition-all p-0.5"><i data-lucide="minus" class="w-3.5 h-3.5"></i></button>
+                        <span class="text-white text-xs font-bold px-1">${item.quantity}</span>
+                        <button onclick="adjustQty(${item.id}, 1)" class="text-gray-400 hover:text-brandOrange transition-all p-0.5"><i data-lucide="plus" class="w-3.5 h-3.5"></i></button>
+                    </div>
+                `;
+                container.appendChild(itemEl);
+            });
+
+            lucide.createIcons();
+        }
+
+        // CONFIRM ORDER / CHECKOUT SIMULATION
+        function triggerCheckout() {
+            if (shoppingCart.length === 0) return;
+
+            // Trigger visual modal placeholder representation
+            showNotification("Connecting to Express Delivery Hub...", "loader");
+            
+            setTimeout(() => {
+                showNotification("Order Confirmed! Your driver is wrapping up the thermal box.", "check-circle2");
+                shoppingCart = [];
+                renderCartItems();
+                updateCartSummary();
+                toggleCartDrawer();
+            }, 1800);
+        }
+
+        // COUNTDOWN TIMER FOR SPECIFIC DEALS
+        function startCountdownTimer() {
+            let hours = 5;
+            let minutes = 42;
+            let seconds = 19;
+
+            const hTimer = document.getElementById('hours-timer');
+            const mTimer = document.getElementById('minutes-timer');
+            const sTimer = document.getElementById('seconds-timer');
+
+            setInterval(() => {
+                seconds--;
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                    if (minutes < 0) {
+                        minutes = 59;
+                        hours--;
+                        if (hours < 0) {
+                            // Reset promo window
+                            hours = 12;
+                        }
+                    }
+                }
+
+                hTimer.textContent = String(hours).padStart(2, '0');
+                mTimer.textContent = String(minutes).padStart(2, '0');
+                sTimer.textContent = String(seconds).padStart(2, '0');
+            }, 1000);
+        }
+
+        // MESSAGE NOTIFICATION TOAST WRAPPER (Replacing Alert blocks)
+        function showNotification(message, iconName) {
+            const container = document.getElementById('toast-container');
+            
+            const toast = document.createElement('div');
+            toast.className = "bg-brandGray/95 border-2 border-brandOrange/40 backdrop-blur-md text-white p-4 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-4 opacity-0 transition-all duration-300 pointer-events-auto cursor-pointer";
+            
+            toast.innerHTML = `
+                <div class="p-2 bg-brandOrange/10 border border-brandOrange/30 text-brandOrange rounded-lg">
+                    <i data-lucide="${iconName || 'bell'}" class="w-5 h-5"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="text-xs sm:text-sm font-bold">${message}</p>
+                </div>
+                <button onclick="this.parentElement.remove()" class="text-gray-400 hover:text-white p-1">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            `;
+            
+            container.appendChild(toast);
+            lucide.createIcons();
+
+            // Slide in animation
+            setTimeout(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            }, 10);
+
+            // Auto wipe item
+            setTimeout(() => {
+                toast.classList.add('translate-y-4', 'opacity-0');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 4000);
+        }
+
+        // FORMS SUBMISSIONS
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            showNotification("Thank you! Your message was submitted. Our team will email back shortly.", "send");
+            event.target.reset();
+        }
+
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            showNotification("Awesome! Check your inbox for your 15% discount coupon.", "gift");
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
